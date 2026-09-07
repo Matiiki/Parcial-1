@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>NexaGear | Producto</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ENCABEZADO -->
+    <header>
+
+        <h1>NexaGear</h1>
+
+
+        <nav>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        Inicio
+                    </a>
+                </li>
+
+                <li>
+                    <a href="productos.html">
+                        Productos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="registro.html">
+                        Registro
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contacto.html">
+                        Contacto
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <div>
+
+            🛒
+
+            <span id="contador-carrito">
+                0
+            </span>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+
+
+        <section class="detalle-producto">
+
+
+            <!-- IMAGEN -->
+            <div class="detalle-imagen">
+
+                <img
+                    id="imagen-producto"
+                    src=""
+                    alt=""
+                >
+
+            </div>
+
+
+
+            <!-- INFORMACIÓN -->
+            <div class="detalle-info">
+
+
+                <!-- CATEGORÍA -->
+                <p
+                    class="categoria-producto"
+                    id="categoria-producto">
+                </p>
+
+
+                <!-- NOMBRE -->
+                <h2 id="nombre-producto">
+                </h2>
+
+
+                <!-- PRECIO -->
+                <p
+                    class="precio-detalle"
+                    id="precio-producto">
+                </p>
+
+
+                <!-- DESCRIPCIÓN -->
+                <p
+                    class="descripcion-producto"
+                    id="descripcion-producto">
+                </p>
+
+
+
+                <h3>
+                    Características
+                </h3>
+
+
+                <!-- LISTA DE CARACTERÍSTICAS -->
+                <ul
+                    class="caracteristicas"
+                    id="caracteristicas-producto">
+                </ul>
+
+
+
+                <!-- CANTIDAD -->
+                <div class="cantidad">
+
+                    <label for="cantidad-producto">
+                        Cantidad:
+                    </label>
+
+
+                    <input
+                        type="number"
+                        id="cantidad-producto"
+                        value="1"
+                        min="1"
+                        max="10"
+                    >
+
+                </div>
+
+
+
+                <!-- AGREGAR AL CARRITO -->
+                <button
+                    type="button"
+                    class="boton-carrito"
+                >
+                    Agregar al carrito
+                </button>
+
+
+
+                <!-- VOLVER -->
+                <a
+                    href="productos.html"
+                    class="volver-productos"
+                >
+                    Volver a productos
+                </a>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+    <footer>
+
+
+        <section>
+
+            <h2>
+                NexaGear
+            </h2>
+
+            <p>
+                Tu tienda de periféricos y accesorios gamer.
+            </p>
+
+        </section>
+
+
+
+        <section>
+
+            <h3>
+                Enlaces
+            </h3>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        Inicio
+                    </a>
+                </li>
+
+                <li>
+                    <a href="productos.html">
+                        Productos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="registro.html">
+                        Registro
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contacto.html">
+                        Contacto
+                    </a>
+                </li>
+
+            </ul>
+
+        </section>
+
+
+
+        <section>
+
+            <h3>
+                Contacto
+            </h3>
+
+            <p>
+                contacto@nexagear.cl
+            </p>
+
+            <p>
+                Instagram | Facebook
+            </p>
+
+        </section>
+
+
+
+        <p>
+            &copy; 2026 NexaGear.
+            Todos los derechos reservados.
+        </p>
+
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="js/app.js"></script>
+
+    <script src="js/producto.js"></script>
+
+
+</body>
+
+</html>
