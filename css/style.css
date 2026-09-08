@@ -399,7 +399,7 @@ header div {
    BOTÓN AGREGAR AL CARRITO
 ========================= */
 
-.boton-carrito {
+.boton-agregar {
     background-color: #7c3aed;
     color: white;
 
@@ -419,7 +419,7 @@ header div {
     transition: 0.3s;
 }
 
-.boton-carrito:hover {
+.boton-agregar:hover {
     background-color: #6d28d9;
 }
 
@@ -968,4 +968,343 @@ a {
 
         text-align: center;
     }
+/* =================================
+   CARRITO
+================================= */
+
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+
+/* Título */
+
+main > h2 {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+
+/* Contenedor de productos */
+
+#lista-carrito {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* Cada producto */
+
+#lista-carrito article {
+    background: #18181f;
+    border: 1px solid #30303a;
+    border-radius: 15px;
+    padding: 25px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.3);
+
+    transition: 0.3s;
+}
+
+
+/* Efecto al pasar el mouse */
+
+#lista-carrito article:hover {
+    transform: translateY(-3px);
+
+    border-color: #7c3aed;
+
+    box-shadow:
+        0 0 20px rgba(124, 58, 237, 0.25);
+}
+
+
+/* Nombre del producto */
+
+#lista-carrito article h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+
+/* Información */
+
+#lista-carrito article p {
+    margin: 8px 0;
+    color: #cfcfcf;
+}
+
+
+/* Botones */
+
+#lista-carrito button {
+    border: none;
+    border-radius: 8px;
+
+    padding: 9px 15px;
+
+    margin-right: 8px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+
+/* Botón aumentar */
+
+.aumentar {
+    background: #22c55e;
+    color: white;
+}
+
+
+/* Botón disminuir */
+
+.disminuir {
+    background: #f59e0b;
+    color: white;
+}
+
+
+/* Botón eliminar */
+
+.eliminar {
+    background: #ef4444;
+    color: white;
+}
+
+
+/* Efecto botones */
+
+#lista-carrito button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+
+/* Línea */
+
+#lista-carrito hr {
+    border: none;
+    border-top: 1px solid #30303a;
+    margin-top: 20px;
+}
+
+
+/* =================================
+   TOTAL
+================================= */
+
+main > section:last-child {
+    margin-top: 30px;
+
+    background: #18181f;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    border: 1px solid #30303a;
+
+    text-align: right;
+}
+
+
+#total-carrito {
+    color: #a855f7;
+    font-size: 30px;
+}
+
+
+/* =================================
+   BOTÓN VACIAR
+================================= */
+
+#vaciar-carrito {
+    background: #ef4444;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    margin-right: 10px;
+
+    font-weight: bold;
+}
+
+
+/* =================================
+   BOTÓN COMPRAR
+================================= */
+
+#comprar {
+    background: #7c3aed;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 25px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    font-size: 16px;
+
+    transition: 0.2s;
+}
+
+
+#comprar:hover {
+    background: #9333ea;
+
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 15px rgba(124, 58, 237, 0.5);
+}
+
+
+/* =================================
+   CARRITO VACÍO
+================================= */
+
+#lista-carrito > p {
+    text-align: center;
+
+    font-size: 20px;
+
+    color: #aaa;
+
+    padding: 60px;
+
+    background: #18181f;
+
+    border-radius: 15px;
+
+    border: 1px solid #30303a;
+}
+#abrir-carrito {
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+
+    padding: 8px 14px;
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+#abrir-carrito:hover {
+    background: #7c3aed;
+
+    box-shadow:
+        0 0 15px rgba(124, 58, 237, 0.5);
+}
+/* =========================================
+   CARRITO DEL HEADER
+========================================= */
+
+#abrir-carrito {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    width: 48px;
+    height: 42px;
+
+    color: white;
+    text-decoration: none;
+
+    background: #181d2b;
+
+    border: 1px solid #7c3aed;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Icono */
+
+#abrir-carrito .icono-carrito {
+    font-size: 20px;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* Número */
+
+#contador-carrito {
+    position: absolute;
+
+    top: -8px;
+    right: -8px;
+
+    min-width: 20px;
+    height: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2px 5px;
+
+    background: #8b5cf6;
+
+    color: white;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    border-radius: 50%;
+
+    border: 2px solid #111827;
+}
+
+
+/* Hover */
+
+#abrir-carrito:hover {
+    background: #7c3aed;
+
+    box-shadow:
+        0 0 10px rgba(124, 58, 237, 0.5),
+        0 0 25px rgba(124, 58, 237, 0.25);
+
+    transform: translateY(-2px);
+}
+
+
+/* Animación del carrito */
+
+#abrir-carrito:hover .icono-carrito {
+    transform: scale(1.15);
+}
 }
