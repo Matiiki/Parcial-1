@@ -314,6 +314,24 @@ if (producto) {
         "NexaGear | " + producto.nombre;
 
 
+// ======================================
+// CONFIGURAR BOTÓN AGREGAR AL CARRITO
+// ======================================
+
+const botonAgregar =
+    document.getElementById("boton-agregar");
+
+botonAgregar.dataset.id =
+    idProducto;
+
+botonAgregar.dataset.nombre =
+    producto.nombre;
+
+botonAgregar.dataset.precio =
+    producto.precio
+        .replace("$", "")
+        .replace(".", "");
+
 } else {
 
 
@@ -330,4 +348,14 @@ if (producto) {
     ).textContent =
         "No se pudo encontrar la información del producto seleccionado.";
 
+    if (producto) {
+        const botonAgregar = document.getElementById("boton-agregar");
+
+        botonAgregar.dataset.id = idProducto;
+        botonAgregar.dataset.nombre = producto.nombre;
+        botonAgregar.dataset.precio = producto.precio
+        .replace("$", "")
+        .replace(".", "");
+
+    }
 }
