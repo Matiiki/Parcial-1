@@ -29,7 +29,7 @@ function actualizarContador() {
 }
 
 
-// Mostrar el contador al cargar la página
+// Mostrar contador al cargar la página
 actualizarContador();
 
 
@@ -45,6 +45,32 @@ botonesAgregar.forEach(function(boton) {
         const nombre = boton.dataset.nombre;
         const precio = Number(boton.dataset.precio);
 
+        // Buscar cantidad seleccionada
+        const campoCantidad = document.getElementById("cantidad-producto");
+
+        let cantidad = 1;
+
+        if (campoCantidad) {
+            cantidad = Number(campoCantidad.value);
+
+            if (cantidad < 1) {
+                cantidad = 1;
+            }
+
+            if (cantidad > 10) {
+                cantidad = 10;
+            }
+        }
+
+
+        // Verificar que el botón tenga los datos
+        if (!id || !nombre || !precio) {
+            alert("No se pudo obtener la información del producto.");
+            return;
+        }
+
+
+        // Buscar si el producto ya está en el carrito
         const productoExistente = carrito.find(function(producto) {
             return producto.id === id;
         });
@@ -52,7 +78,7 @@ botonesAgregar.forEach(function(boton) {
 
         if (productoExistente) {
 
-            productoExistente.cantidad++;
+            productoExistente.cantidad += cantidad;
 
         } else {
 
@@ -60,16 +86,24 @@ botonesAgregar.forEach(function(boton) {
                 id: id,
                 nombre: nombre,
                 precio: precio,
-                cantidad: 1
+                cantidad: cantidad
             });
 
         }
 
 
-        localStorage.setItem("carrito", JSON.stringify(carrito));
+        // Guardar carrito
+        localStorage.setItem(
+            "carrito",
+            JSON.stringify(carrito)
+        );
 
+
+        // Actualizar contador
         actualizarContador();
 
+
+        // Mensaje
         alert("Producto agregado al carrito");
 
     });
