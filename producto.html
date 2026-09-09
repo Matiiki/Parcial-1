@@ -62,15 +62,12 @@
         </nav>
 
 
-        <div>
+        <a href="carrito.html" id="abrir-carrito">
 
-            🛒
+            <span class="icono-carrito">🛒</span>
+            <span id="contador-carrito">0</span>
 
-            <span id="contador-carrito">
-                0
-            </span>
-
-        </div>
+        </a>
 
     </header>
 
@@ -154,6 +151,7 @@
                         value="1"
                         min="1"
                         max="10"
+                        
                     >
 
                 </div>
@@ -161,10 +159,13 @@
 
 
                 <!-- AGREGAR AL CARRITO -->
-                <button
+                <button 
                     type="button"
-                    class="boton-carrito"
-                >
+                    class="boton-agregar"
+                    id="boton-agregar"
+                    data-id=""
+                    data-nombre=""
+                    data-precio="">
                     Agregar al carrito
                 </button>
 

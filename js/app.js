@@ -1,71 +1,111 @@
-// OBTENER CONTADOR DEL CARRITO
+// ===============================
+// OBTENER ELEMENTOS DEL HTML
+// ===============================
+
 const contadorCarrito =
     document.getElementById("contador-carrito");
 
-
-// RECUPERAR CANTIDAD GUARDADA
-let cantidadCarrito =
-    Number(localStorage.getItem("cantidadCarrito")) || 0;
-
-
-// MOSTRAR CANTIDAD AL CARGAR LA PÁGINA
-contadorCarrito.textContent = cantidadCarrito;
-
-
-// OBTENER BOTONES DE AGREGAR AL CARRITO
 const botonesAgregar =
-    document.querySelectorAll(".producto button, .boton-carrito");
+    document.querySelectorAll(".boton-agregar");
 
 
-// RECORRER TODOS LOS BOTONES
+// ===============================
+// RECUPERAR CARRITO
+// ===============================
+
+let carrito =
+    JSON.parse(localStorage.getItem("carrito")) || [];
+
+
+// ===============================
+// ACTUALIZAR CONTADOR
+// ===============================
+
+function actualizarContador() {
+
+    let cantidadTotal = 0;
+
+    carrito.forEach(function(producto) {
+
+        cantidadTotal =
+            cantidadTotal + producto.cantidad;
+
+    });
+
+    contadorCarrito.textContent = cantidadTotal;
+}
+
+
+// Mostrar contador al cargar
+actualizarContador();
+
+
+// ===============================
+// AGREGAR PRODUCTO
+// ===============================
+
 botonesAgregar.forEach(function(boton) {
 
     boton.addEventListener("click", function() {
 
-        let cantidadAgregar = 1;
+        // Obtener información del producto
+
+        const id =
+            boton.dataset.id;
+
+        const nombre =
+            boton.dataset.nombre;
+
+        const precio =
+            Number(boton.dataset.precio);
 
 
-        // SI ESTAMOS EN LA PÁGINA DETALLE DEL PRODUCTO
-        if (boton.classList.contains("boton-carrito")) {
+        // Buscar si el producto ya está en el carrito
 
-            const cantidadProducto =
-                document.getElementById("cantidad-producto");
+        const productoExistente =
+            carrito.find(function(producto) {
 
-            cantidadAgregar =
-                Number(cantidadProducto.value);
+                return producto.id === id;
+
+            });
 
 
-            // VALIDAR CANTIDAD
-            if (
-                cantidadAgregar < 1 ||
-                cantidadAgregar > 10
-            ) {
+        // Si ya existe
+        if (productoExistente) {
 
-                alert(
-                    "La cantidad debe estar entre 1 y 10."
-                );
+            productoExistente.cantidad++;
 
-                return;
-            }
+        }
+
+        // Si no existe
+        else {
+
+            carrito.push({
+
+                id: id,
+                nombre: nombre,
+                precio: precio,
+                cantidad: 1
+
+            });
 
         }
 
 
-        // SUMAR PRODUCTOS
-        cantidadCarrito =
-            cantidadCarrito + cantidadAgregar;
+        // Guardar carrito
 
-
-        // GUARDAR EN EL NAVEGADOR
         localStorage.setItem(
-            "cantidadCarrito",
-            cantidadCarrito
+            "carrito",
+            JSON.stringify(carrito)
         );
 
 
-        // ACTUALIZAR CONTADOR
-        contadorCarrito.textContent =
-            cantidadCarrito;
+        // Actualizar contador
+
+        actualizarContador();
+
+
+        alert("Producto agregado al carrito");
 
     });
 

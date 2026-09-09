@@ -27,9 +27,12 @@
             </ul>
         </nav>
 
-        <div>
-            🛒 <span id="contador-carrito">0</span>
-        </div>
+        <a href="carrito.html" id="abrir-carrito">
+
+            <span class="icono-carrito">🛒</span>
+            <span id="contador-carrito">0</span>
+
+        </a>
 
     </header>
 
@@ -47,7 +50,6 @@
                 de juego.
             </p>
 
-            <a href="productos.html">Ver productos</a>
 
         </section>
 
@@ -74,8 +76,15 @@
                     Ver producto
                 </a>
 
-                <button type="button">
+                <button type="button"
+
+                    type="button"
+                    class="boton-agregar"
+                    data-id="mouse"
+                    data-nombre="Logitech G203"
+                    data-precio="29990">
                     Agregar al carrito
+
                 </button>
 
             </article>
@@ -98,7 +107,12 @@
                     Ver producto
                 </a>
 
-                <button type="button">
+                <button 
+                    type="button"
+                    class="boton-agregar"
+                    data-id="teclado"
+                    data-nombre="HyperX Alloy Origins"
+                    data-precio="54990">
                     Agregar al carrito
                 </button>
 
@@ -122,7 +136,12 @@
                     Ver producto
                 </a>
 
-                <button type="button">
+                <button 
+                    type="button"
+                    class="boton-agregar"
+                    data-id="audifonos"
+                    data-nombre="HyperX Cloud II"
+                    data-precio="59990">
                     Agregar al carrito
                 </button>
 
@@ -224,7 +243,7 @@
 
         
     </footer>
-
+    
 
     <script src="js/app.js"></script>
 
