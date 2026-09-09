@@ -1,20 +1,16 @@
 // ===============================
-// OBTENER ELEMENTOS DEL HTML
+// ELEMENTOS DEL HTML
 // ===============================
 
-const contadorCarrito =
-    document.getElementById("contador-carrito");
-
-const botonesAgregar =
-    document.querySelectorAll(".boton-agregar");
+const contadorCarrito = document.getElementById("contador-carrito");
+const botonesAgregar = document.querySelectorAll(".boton-agregar");
 
 
 // ===============================
-// RECUPERAR CARRITO
+// CARRITO
 // ===============================
 
-let carrito =
-    JSON.parse(localStorage.getItem("carrito")) || [];
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 
 // ===============================
@@ -26,84 +22,53 @@ function actualizarContador() {
     let cantidadTotal = 0;
 
     carrito.forEach(function(producto) {
-
-        cantidadTotal =
-            cantidadTotal + producto.cantidad;
-
+        cantidadTotal += producto.cantidad;
     });
 
     contadorCarrito.textContent = cantidadTotal;
 }
 
 
-// Mostrar contador al cargar
+// Mostrar el contador al cargar la página
 actualizarContador();
 
 
 // ===============================
-// AGREGAR PRODUCTO
+// AGREGAR PRODUCTOS
 // ===============================
 
 botonesAgregar.forEach(function(boton) {
 
     boton.addEventListener("click", function() {
 
-        // Obtener información del producto
+        const id = boton.dataset.id;
+        const nombre = boton.dataset.nombre;
+        const precio = Number(boton.dataset.precio);
 
-        const id =
-            boton.dataset.id;
-
-        const nombre =
-            boton.dataset.nombre;
-
-        const precio =
-            Number(boton.dataset.precio);
+        const productoExistente = carrito.find(function(producto) {
+            return producto.id === id;
+        });
 
 
-        // Buscar si el producto ya está en el carrito
-
-        const productoExistente =
-            carrito.find(function(producto) {
-
-                return producto.id === id;
-
-            });
-
-
-        // Si ya existe
         if (productoExistente) {
 
             productoExistente.cantidad++;
 
-        }
-
-        // Si no existe
-        else {
+        } else {
 
             carrito.push({
-
                 id: id,
                 nombre: nombre,
                 precio: precio,
                 cantidad: 1
-
             });
 
         }
 
 
-        // Guardar carrito
-
-        localStorage.setItem(
-            "carrito",
-            JSON.stringify(carrito)
-        );
-
-
-        // Actualizar contador
+        localStorage.setItem("carrito", JSON.stringify(carrito));
 
         actualizarContador();
-
 
         alert("Producto agregado al carrito");
 

@@ -2,77 +2,52 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>NexaGear | Carrito</title>
 
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 
-<body>
+<body class="pagina-carrito">
 
+    <!-- =========================
+         ENCABEZADO
+    ========================== -->
     <header>
 
         <h1>NexaGear</h1>
 
         <nav>
-
             <ul>
-
-                <li>
-                    <a href="index.html">
-                        Inicio
-                    </a>
-                </li>
-
-                <li>
-                    <a href="productos.html">
-                        Productos
-                    </a>
-                </li>
-
-                <li>
-                    <a href="registro.html">
-                        Registro
-                    </a>
-                </li>
-
-                <li>
-                    <a href="contacto.html">
-                        Contacto
-                    </a>
-                </li>
-
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="registro.html">Registro</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
-
         </nav>
 
-        <div>
-
-            🛒
-
-            <span id="contador-carrito">
-                0
-            </span>
-
-        </div>
+        <a href="carrito.html" id="abrir-carrito">
+            <span class="icono-carrito">🛒</span>
+            <span id="contador-carrito">0</span>
+        </a>
 
     </header>
 
 
+    <!-- =========================
+         CARRITO
+    ========================== -->
     <main>
 
         <h2>Mi carrito</h2>
 
-        <section id="lista-carrito">
+        <!-- Los productos se agregan desde carrito.js -->
+        <section id="lista-carrito"></section>
 
-        </section>
 
-
+        <!-- TOTAL Y ACCIONES -->
         <section>
 
             <h2>
@@ -80,11 +55,17 @@
                 $<span id="total-carrito">0</span>
             </h2>
 
-            <button id="vaciar-carrito">
+            <button
+                type="button"
+                id="vaciar-carrito"
+            >
                 Vaciar carrito
             </button>
 
-            <button id="comprar">
+            <button
+                type="button"
+                id="comprar"
+            >
                 Comprar
             </button>
 
@@ -93,6 +74,9 @@
     </main>
 
 
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
     <script src="js/carrito.js"></script>
 
 </body>

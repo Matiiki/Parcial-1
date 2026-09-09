@@ -12,12 +12,13 @@
 
 <body>
 
-    <!-- ENCABEZADO -->
+    <!-- =========================
+         ENCABEZADO
+    ========================== -->
     <header>
 
         <h1>NexaGear</h1>
 
-        <!-- MENÚ DE NAVEGACIÓN -->
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
@@ -28,28 +29,27 @@
         </nav>
 
         <a href="carrito.html" id="abrir-carrito">
-
             <span class="icono-carrito">🛒</span>
             <span id="contador-carrito">0</span>
-
         </a>
 
     </header>
 
 
-    <!-- CONTENIDO PRINCIPAL -->
+    <!-- =========================
+         CONTENIDO PRINCIPAL
+    ========================== -->
     <main>
 
-        <!-- BANNER PRINCIPAL -->
+        <!-- BANNER -->
         <section class="banner">
 
             <h2>Lleva tu setup al siguiente nivel</h2>
 
             <p>
-                Encuentra periféricos y accesorios para mejorar tu experiencia
-                de juego.
+                Encuentra periféricos y accesorios para mejorar
+                tu experiencia de juego.
             </p>
-
 
         </section>
 
@@ -59,6 +59,8 @@
 
             <h2>Productos destacados</h2>
 
+
+            <!-- MOUSE -->
             <article class="producto">
 
                 <img
@@ -68,80 +70,95 @@
 
                 <h3>Logitech G203</h3>
 
-                <p>Mouse gamer RGB con sensor de hasta 8.000 DPI.</p>
+                <p>
+                    Mouse gamer RGB con sensor de hasta 8.000 DPI.
+                </p>
 
-                <p>$29.990</p>
+                <p class="precio">
+                    $29.990
+                </p>
 
                 <a href="producto.html?id=mouse">
                     Ver producto
                 </a>
 
-                <button type="button"
-
+                <button
                     type="button"
                     class="boton-agregar"
                     data-id="mouse"
                     data-nombre="Logitech G203"
-                    data-precio="29990">
+                    data-precio="29990"
+                >
                     Agregar al carrito
-
                 </button>
 
             </article>
 
 
+            <!-- TECLADO -->
             <article class="producto">
 
                 <img
                     src="img/teclado-hyperx.jpg"
-                    alt="Teclado mecánico HyperX"
+                    alt="Teclado mecánico HyperX Alloy Origins"
                 >
 
                 <h3>HyperX Alloy Origins</h3>
 
-                <p>Teclado mecánico gamer con iluminación RGB.</p>
+                <p>
+                    Teclado mecánico gamer con iluminación RGB.
+                </p>
 
-                <p>$54.990</p>
+                <p class="precio">
+                    $54.990
+                </p>
 
                 <a href="producto.html?id=teclado">
                     Ver producto
                 </a>
 
-                <button 
+                <button
                     type="button"
                     class="boton-agregar"
                     data-id="teclado"
                     data-nombre="HyperX Alloy Origins"
-                    data-precio="54990">
+                    data-precio="54990"
+                >
                     Agregar al carrito
                 </button>
 
             </article>
 
 
+            <!-- AUDÍFONOS -->
             <article class="producto">
 
                 <img
                     src="img/audifonos-hyperx.jpg"
-                    alt="Audífonos gamer HyperX"
+                    alt="Audífonos gamer HyperX Cloud II"
                 >
 
                 <h3>HyperX Cloud II</h3>
 
-                <p>Audífonos gamer con sonido envolvente.</p>
+                <p>
+                    Audífonos gamer con sonido envolvente.
+                </p>
 
-                <p>$59.990</p>
+                <p class="precio">
+                    $59.990
+                </p>
 
                 <a href="producto.html?id=audifonos">
                     Ver producto
                 </a>
 
-                <button 
+                <button
                     type="button"
                     class="boton-agregar"
                     data-id="audifonos"
                     data-nombre="HyperX Cloud II"
-                    data-precio="59990">
+                    data-precio="59990"
+                >
                     Agregar al carrito
                 </button>
 
@@ -157,22 +174,30 @@
 
             <article>
                 <h3>Mouse</h3>
-                <p>Encuentra mouse gamer para todo tipo de jugador.</p>
+                <p>
+                    Encuentra mouse gamer para todo tipo de jugador.
+                </p>
             </article>
 
             <article>
                 <h3>Teclados</h3>
-                <p>Teclados mecánicos y accesorios para tu escritorio.</p>
+                <p>
+                    Teclados mecánicos y accesorios para tu escritorio.
+                </p>
             </article>
 
             <article>
                 <h3>Audio</h3>
-                <p>Audífonos y dispositivos de audio para gaming.</p>
+                <p>
+                    Audífonos y dispositivos de audio para gaming.
+                </p>
             </article>
 
             <article>
                 <h3>Accesorios</h3>
-                <p>Complementa tu setup con los mejores accesorios.</p>
+                <p>
+                    Complementa tu setup con los mejores accesorios.
+                </p>
             </article>
 
         </section>
@@ -181,28 +206,35 @@
         <!-- VIDEO -->
         <section class="video">
 
-    <h2>Mejora tu setup gamer</h2>
+            <h2>Mejora tu setup gamer</h2>
 
-    <p>
-        Revisa estos consejos para mejorar tu espacio de juego.
-    </p>
+            <p>
+                Revisa estos consejos para mejorar tu espacio de juego.
+            </p>
 
-    <div class="contenedor-video">
+            <div class="contenedor-video">
 
-        <iframe
-            src="https://www.youtube.com/embed/VIDEO_ID"
-            title="Consejos para mejorar tu setup gamer"
-            allowfullscreen>
-        </iframe>
+                <video controls>
 
-    </div>
+                    <source
+                        src="video/setup-gamer.mp4"
+                        type="video/mp4"
+                    >
 
-</section>
+                    Tu navegador no soporta videos HTML5.
+
+                </video>
+
+            </div>
+
+        </section>
 
     </main>
 
 
-    <!-- PIE DE PÁGINA -->
+    <!-- =========================
+         PIE DE PÁGINA
+    ========================== -->
     <footer>
 
         <section>
@@ -241,10 +273,16 @@
         </section>
 
 
-        
-    </footer>
-    
+        <p>
+            &copy; 2026 NexaGear. Todos los derechos reservados.
+        </p>
 
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
     <script src="js/app.js"></script>
 
 </body>

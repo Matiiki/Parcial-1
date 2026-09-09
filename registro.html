@@ -12,7 +12,9 @@
 
 <body>
 
-    <!-- ENCABEZADO -->
+    <!-- =========================
+         ENCABEZADO
+    ========================== -->
     <header>
 
         <h1>NexaGear</h1>
@@ -27,16 +29,16 @@
         </nav>
 
         <a href="carrito.html" id="abrir-carrito">
-
             <span class="icono-carrito">🛒</span>
             <span id="contador-carrito">0</span>
-
         </a>
 
     </header>
 
 
-    <!-- CONTENIDO PRINCIPAL -->
+    <!-- =========================
+         CONTENIDO PRINCIPAL
+    ========================== -->
     <main>
 
         <section class="seccion-formulario">
@@ -52,7 +54,6 @@
 
                 <form id="form-registro" novalidate>
 
-
                     <!-- NOMBRE -->
                     <div class="grupo-formulario">
 
@@ -64,7 +65,7 @@
                             type="text"
                             id="nombre"
                             name="nombre"
-                            placeholder="Ej: Matias"
+                            placeholder="Ej: Matías"
                             autocomplete="given-name"
                         >
 
@@ -169,46 +170,40 @@
 
 
                     <!-- FECHA DE NACIMIENTO -->
-<div class="grupo-formulario">
+                    <div class="grupo-formulario">
 
-    <label for="fecha-nacimiento">
-        Fecha de nacimiento
-    </label>
+                        <label for="fecha-nacimiento">
+                            Fecha de nacimiento
+                        </label>
 
-    <input
-        type="date"
-        id="fecha-nacimiento"
-        name="fecha-nacimiento"
-    >
+                        <input
+                            type="date"
+                            id="fecha-nacimiento"
+                            name="fecha-nacimiento"
+                        >
 
-    <small
-        class="mensaje-error"
-        id="error-fecha">
-    </small>
+                        <small
+                            class="mensaje-error"
+                            id="error-fecha">
+                        </small>
 
-</div>
-
-
-                   
-
-
-                   
+                    </div>
 
 
                     <!-- BOTÓN -->
-<button
-    type="submit"
-    class="boton-formulario"
->
-    Crear cuenta
-</button>
+                    <button
+                        type="submit"
+                        class="boton-formulario"
+                    >
+                        Crear cuenta
+                    </button>
 
-<!-- MENSAJE DE ÉXITO -->
-<p
-    class="mensaje-exito"
-    id="mensaje-exito">
-</p>
 
+                    <!-- MENSAJE DE ÉXITO -->
+                    <p
+                        class="mensaje-exito"
+                        id="mensaje-exito">
+                    </p>
 
                 </form>
 
@@ -219,7 +214,9 @@
     </main>
 
 
-    <!-- PIE DE PÁGINA -->
+    <!-- =========================
+         PIE DE PÁGINA
+    ========================== -->
     <footer>
 
         <section>
@@ -252,20 +249,24 @@
             <h3>Contacto</h3>
 
             <p>contacto@nexagear.cl</p>
-
             <p>Instagram | Facebook</p>
 
         </section>
 
 
-        
+        <p>
+            &copy; 2026 NexaGear. Todos los derechos reservados.
+        </p>
 
     </footer>
 
 
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
     <script src="js/app.js"></script>
     <script src="js/registro.js"></script>
 
 </body>
-</html>
 
+</html>
