@@ -110,25 +110,29 @@ formulario.addEventListener("submit", function(event) {
 
     // VALIDAR CORREO
 
-    const expresionCorreo =
-        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const valorCorreo =
+    correo.value.trim().toLowerCase();
 
-    if (correo.value.trim() === "") {
+const expresionCorreo =
+    /^[a-zA-Z0-9](?:[a-zA-Z0-9._%+-]*[a-zA-Z0-9])?@[a-zA-Z0-9](?:[a-zA-Z0-9.-]*[a-zA-Z0-9])?\.[a-zA-Z]{2,}$/;
 
-        errorCorreo.textContent =
-            "El correo electrónico es obligatorio.";
+if (valorCorreo === "") {
 
-        formularioValido = false;
+    errorCorreo.textContent =
+        "El correo electrónico es obligatorio.";
 
-    } else if (
-        !expresionCorreo.test(correo.value.trim())
-    ) {
+    formularioValido = false;
 
-        errorCorreo.textContent =
-            "Ingrese un correo electrónico válido.";
+} else if (
+    !expresionCorreo.test(valorCorreo) ||
+    valorCorreo.includes("..")
+) {
 
-        formularioValido = false;
-    }
+    errorCorreo.textContent =
+        "Ingrese un correo electrónico válido.";
+
+    formularioValido = false;
+}
 
 
     // VALIDAR CONTRASEÑA
